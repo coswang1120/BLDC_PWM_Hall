@@ -95,78 +95,79 @@ int fputc(int ch, FILE *f)  // print function for RS232
     return ch;
 }
 
-int main(void)
-{  
-	 //2ms  control  knob control
-   Delay(10000);
-   SysTickConfig();      // 10ms	 
-	 logicContr.Control_Mode=2;//   1 -> DUTY = 2*pi_spd.Ref    2 ->   close loop    I & rotational speed 
-	 logicContr.Run_mode=1;    //     1 ->  CCW     2 -> CW
-   GPIO_LED485RE_int( );  // RS485 和运行LED
-   Init_Gpio_ADC( );      // ADC的引脚初始化      83us
-	 InitUSART3_Gpio( );    // 串口3IO初始化
-   InitCAN_Gpio( );       // CAN通讯的IO初始化
- 	 Init_Gpio_TIM1_PWM( ); // 高级定时器1的6个IO初始化   // pwm       12K       83.333us      
-	 InitThreeHallGpio( );  // 霍尔的IO初始化	 
- 	 Init_PWMDAC_Gpio( );   // PWM4的IO作为DAC初始化
-   ThreeHallPara_init( ); // 三霍尔角度传感器的参数初始化
-	 Usart3_RS232_init( );  //串口3初始化
-	 CAN_Config( );        // CAN通讯的初始化
- 	 DMA_Configuration( ); //ADC连接DMA读取数据初始化
-	 Delay(10000);
-   ADC1_Configuration( ); //ADC模式初始化      1us
-   Delay(10000);
-   Tim1_PWM_Init( );      //高级定时器1初始化   Tim1 ini   Tim int  ->   ADC / offset curr  /PWM   /   6 step     /    --> TIM1_ISR_MCLoop controler scheme  83 us
-   Delay(10000);     
-	 TIM4PWMDAC_Config( );  //TIM4的 作为DAC初始化
-	 Delay(10000);
-	 Offset_CurrentReading( ); // 电机的母线电流采样偏执电压   initial current U_Curr   V_Curr  Bus_Curr   and minue it  
-	 Delay(10000);	    
-	 PI_Pare_init( );           // 三个双PID参数初始化		
-   
-	while(1)
-	 {
-		
-		RunSystimer( );       // 时间任务标志初始化  call 10ms
-    CAN_Sendlen( );       //CAN定时发送电机参数     // useless
-	 	Uart3_RS232TX_sen( ); //串口3通讯的定时发送		  // send print command
-	 	ReceiveData_chuli( ); //串口中断接收数据处理
-	  CAN_Receivechuli( );  //CAN通讯中断接收数据处理	 // useless
-		CLEAR_flag( );        // 清除时间任务标志   clear flag
-    //printf("%d \r\n",Hall_Three.Speed_RPMF);
+int main(void) {
+    // 2ms  control  knob control
+    Delay(10000);
+    SysTickConfig();              // 10ms
+    logicContr.Control_Mode = 2;  //   1 -> DUTY = 2*pi_spd.Ref    2 ->   close
+                                  //   loop    I & rotational speed
+    logicContr.Run_mode = 1;      //     1 ->  CCW     2 -> CW
+    GPIO_LED485RE_int();          // RS485 和运行LED
+    Init_Gpio_ADC();              // ADC的引脚初始化      83us
+    InitUSART3_Gpio();            // 串口3IO初始化
+    InitCAN_Gpio();               // CAN通讯的IO初始化
+    Init_Gpio_TIM1_PWM();         // 高级定时器1的6个IO初始化   // pwm
+                                  // 12K       83.333us
+    InitThreeHallGpio();          // 霍尔的IO初始化
+    Init_PWMDAC_Gpio();           // PWM4的IO作为DAC初始化
+    ThreeHallPara_init();         // 三霍尔角度传感器的参数初始化
+    Usart3_RS232_init();          // 串口3初始化
+    CAN_Config();                 // CAN通讯的初始化
+    DMA_Configuration();          // ADC连接DMA读取数据初始化
+    Delay(10000);
+    ADC1_Configuration();  // ADC模式初始化      1us
+    Delay(10000);
+    Tim1_PWM_Init();  // 高级定时器1初始化   Tim1 ini   Tim int  ->   ADC /
+                      // offset curr  /PWM   /   6 step     /    -->
+                      // TIM1_ISR_MCLoop controler scheme  83 us
+    Delay(10000);
+    TIM4PWMDAC_Config();  // TIM4的 作为DAC初始化
+    Delay(10000);
+    Offset_CurrentReading();  // 电机的母线电流采样偏执电压   initial current
+                              // U_Curr   V_Curr  Bus_Curr   and minue it
+    Delay(10000);
+    PI_Pare_init();  // 三个双PID参数初始化
 
-                if (USART_RX_STA == 1) {
-                    //
+    while (1) {
+        RunSystimer();        // 时间任务标志初始化  call 10ms
+        CAN_Sendlen();        // CAN定时发送电机参数     // useless
+        Uart3_RS232TX_sen();  // 串口3通讯的定时发送		  //
+                              // send print command
+        ReceiveData_chuli();  // 串口中断接收数据处理
+        CAN_Receivechuli();   // CAN通讯中断接收数据处理	 // useless
+        CLEAR_flag();         // 清除时间任务标志   clear flag
+                              // printf("%d \r\n",Hall_Three.Speed_RPMF);
 
-                    if (Res == '1') {
-                        logicContr.Control_Mode = 1;
-                        spdcmd = 500;
-                    } else if (Res == '2') {
-                        logicContr.Control_Mode = 1;
-                        spdcmd = 800;
+        if (USART_RX_STA == 1) {
+            //
 
-                    } else if (Res == '3') {
-                        logicContr.Control_Mode = 1;
-                        spdcmd = 1000;
+            if (Res == '1') {
+                logicContr.Control_Mode = 1;
+                spdcmd = 500;
+            } else if (Res == '2') {
+                logicContr.Control_Mode = 1;
+                spdcmd = 800;
 
-                    } else if (Res == '0') {
-                        logicContr.Control_Mode = 1;
-                        spdcmd = 0;
+            } else if (Res == '3') {
+                logicContr.Control_Mode = 1;
+                spdcmd = 1000;
 
-                    }
+            } else if (Res == '0') {
+                logicContr.Control_Mode = 1;
+                spdcmd = 0;
 
-                    else {
-                        logicContr.Control_Mode = 2;
-                        // printf("Others\r\n");
-                    }
-                    // printf("%d \r\n",logicContr.Control_Mode);
-                    USART_RX_STA = 0;
-                }
-         }
+            }
+
+            else {
+                logicContr.Control_Mode = 2;
+                // printf("Others\r\n");
+            }
+            // printf("%d \r\n",logicContr.Control_Mode);
+            USART_RX_STA = 0;
+        }
+    }
 }
 
-
- 
 //===========================================================================
 // No more.
 //===========================================================================
