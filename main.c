@@ -86,17 +86,14 @@ extern  uint16_t  DUTY;
 u8 Res;
 
 int fputc( int ch , FILE *f);
- 
 
-int fputc( int ch , FILE *f)  // print function for RS232
+int fputc(int ch, FILE *f)  // print function for RS232
 {
-    USART_SendData( USART3 , (u8)ch ) ;
-    while(USART_GetFlagStatus(USART3 , USART_FLAG_TC) == RESET)
-    {
+    USART_SendData(USART3, (u8)ch);
+    while (USART_GetFlagStatus(USART3, USART_FLAG_TC) == RESET) {
     }
     return ch;
 }
-
 
 int main(void)
 {  
@@ -138,44 +135,34 @@ int main(void)
 		CLEAR_flag( );        // 清除时间任务标志   clear flag
     //printf("%d \r\n",Hall_Three.Speed_RPMF);
 
-		 if(USART_RX_STA==1)
-        {
-//         
-			    
-					
-					if (Res=='1'){
-						 logicContr.Control_Mode=1;					   	
-             spdcmd = 500;						
-					}
-					else if (Res=='2'){
-						 logicContr.Control_Mode=1;
-						 spdcmd = 800;
-						
-					}
-					else if (Res=='3'){
-						 logicContr.Control_Mode=1;
-						 spdcmd = 1000;
-						
-					}
-					else if (Res=='0'){
-						 logicContr.Control_Mode=1;
-						 spdcmd = 0;
-						
-					}
-										
-					else{
-					
-						logicContr.Control_Mode=2;
-						//printf("Others\r\n");	
-						
-					}
-					//printf("%d \r\n",logicContr.Control_Mode);
-					USART_RX_STA=0;
-        }
-				
-			
-		 
-	 }
+                if (USART_RX_STA == 1) {
+                    //
+
+                    if (Res == '1') {
+                        logicContr.Control_Mode = 1;
+                        spdcmd = 500;
+                    } else if (Res == '2') {
+                        logicContr.Control_Mode = 1;
+                        spdcmd = 800;
+
+                    } else if (Res == '3') {
+                        logicContr.Control_Mode = 1;
+                        spdcmd = 1000;
+
+                    } else if (Res == '0') {
+                        logicContr.Control_Mode = 1;
+                        spdcmd = 0;
+
+                    }
+
+                    else {
+                        logicContr.Control_Mode = 2;
+                        // printf("Others\r\n");
+                    }
+                    // printf("%d \r\n",logicContr.Control_Mode);
+                    USART_RX_STA = 0;
+                }
+         }
 }
 
 

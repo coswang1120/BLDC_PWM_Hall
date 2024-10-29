@@ -1,4 +1,5 @@
-{"files.autoSave": "afterDelay",
+{
+  "files.autoSave": "afterDelay",
   "files.associations": {
     "algorithm": "cpp",
     "functional": "cpp",
@@ -28,12 +29,14 @@
     "usart.h": "c",
     "iq_math.h": "c"
   },
+  "files.exclude": {
+    ".git/": false
+  },
   "terminal.integrated.env.windows": {
     "CHERE_INVOKING": "1"
   },
- "C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: Google, IndentWidth: 4 }",
+  "C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: Google, IndentWidth: 4 }",
   "editor.formatOnPaste": false,
-
   "C_Cpp.formatting": "default",
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
@@ -102,7 +105,7 @@
   "C_Cpp_Runner.useLeakSanitizer": false,
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
-  "C_Cpp_Runner.msvcSecureNoWarnings": false, 
+  "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "Codegeex.RepoIndex": true,
   "stm32-for-vscode.armToolchainPath": "C:\\PROGRAM FILES (X86)\\ARM GNU TOOLCHAIN ARM-NONE-EABI\\13.3 REL1\\BIN"
 }
