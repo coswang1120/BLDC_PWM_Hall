@@ -56,6 +56,9 @@
     GPIOB 13  14    15  PMWUL
 */
 
+//TODO:
+// 1. IQ 15 & IQ 10 混著用
+
 //############################################################
 
 
@@ -74,7 +77,7 @@
 #include <stdio.h>
 #include <math.h>
 #include "main.h"
-//#include "hello_world.h"
+#include "hello_world.h"
 
 u16 t;
 u16 len;
@@ -88,11 +91,38 @@ logic        logicContr=logic_DEFAULTS;
 ADCSamp      ADCSampPare=ADCSamp_DEFAULTS;
 Hall         Hall_Three=Hall_DEFAULTS ;
 
+
+#include "stdarg.h"	 	 
+#include "stdio.h"	 	 
+#include "string.h"	 
+#include "timer.h" 
+
+
+
 extern u16 Tag;
 u16 USART_RX_STA;
 u16 spdcmd;
 extern  uint16_t  DUTY;
 u8 Res;
+
+// u8 USART3_TX_BUF[600]; 
+
+
+// void u3_printf(char* fmt,...)  
+// {  
+// 	u16 i,j; 
+// 	va_list ap; 
+// 	va_start(ap,fmt);
+// 	vsprintf((char*)USART3_TX_BUF,fmt,ap);
+// 	va_end(ap);
+// 	i=strlen((const char*)USART3_TX_BUF);		//此次发送数据的长度
+// 	for(j=0;j<i;j++)							//循环发送数据
+// 	{
+// 	  while(USART_GetFlagStatus(USART3,USART_FLAG_TC)==RESET); //循环发送,直到发送完毕   
+// 		USART_SendData(USART3,USART3_TX_BUF[j]); 
+// 	} 
+// } 
+
 
 
 int main(void) {
@@ -133,7 +163,8 @@ int main(void) {
         // ReceiveData_chuli();  // 串口中断接收数据处理      
         CLEAR_flag();         // 清除时间任务标志   clear flag
                               // printf("%d \r\n",Hall_Three.Speed_RPMF);
-
+        //printf("Hello\r\n");                       
+        //u3_printf("Hello\r\n");		//  output HC06   
        
 
 }

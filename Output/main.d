@@ -30,3 +30,6 @@
 .\output\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\output\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 .\output\main.o: .\User_include\main.h
+.\output\main.o: .\User_include\hello_world.h
+.\output\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\output\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
