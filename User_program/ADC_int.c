@@ -19,8 +19,9 @@
 
 #define ADC1_DR_Address    0x4001244C 
 
-extern    logic       logicContr;
-extern    ADCSamp     ADCSampPare;
+
+extern ADCSamp      ADCSampPare;
+extern logic       logicContr;
 uint16_t  ADC_ConvertedValue[5]={0};
 uint16_t  BUS_CurrProtection=600;  //通过母线电流值保护硬件 软件处理 3A左右为600峰值
 
@@ -110,37 +111,36 @@ void DMA_Configuration(void)
 //校准作用,电流传感器的偏移值为1.65V
 void Offset_CurrentReading(void)  //  没有PWM输出是调用
 {
-	static uint16_t ADC_PhaseU_Curr[64];
-	static uint16_t ADC_PhaseV_Curr[64];
-	static uint16_t ADC_BUS_Curr[64];
-	static uint8_t i=0;
-   
-  /* ADC Channel used for current reading are read  in order to get zero currents ADC values*/
-  //64次采样求平均值，电流传感器初始校准   	
-	ADC_PhaseU_Curr[i] = ADC_ConvertedValue[2];
-	ADC_PhaseV_Curr[i] = ADC_ConvertedValue[1];  
-	ADC_BUS_Curr[i] =   ADC_ConvertedValue[0];
+    static uint16_t ADC_PhaseU_Curr[64];
+    static uint16_t ADC_PhaseV_Curr[64];
+    static uint16_t ADC_BUS_Curr[64];
+    static uint8_t i = 0;
 
-	i++;
-	if(i>=64)
-	i=0;
- //对于相电流和母线电流的电阻法测量电流,需要上电读取初始偏执电压
-	if(logicContr.drive_car==0)// 
-	{
-		uint32_t sum_U=0;
-		uint32_t sum_V=0;
-		uint32_t sum_BUS=0;
-		uint8_t i;
-		for(i=0; i < 64; i++)
-		{
-			sum_U += ADC_PhaseU_Curr[i];
-			sum_V += ADC_PhaseV_Curr[i];
-			sum_BUS += ADC_BUS_Curr[i];
-		}
-	     ADCSampPare.OffsetPhaseU_Curr = sum_U /64;
-	     ADCSampPare.OffsetPhaseV_Curr = sum_V /64;
-	     ADCSampPare.OffsetBUS_Curr = sum_BUS /64;
-	}
+    /* ADC Channel used for current reading are read  in order to get zero
+     * currents ADC values*/
+    // 64次采样求平均值，电流传感器初始校准
+    ADC_PhaseU_Curr[i] = ADC_ConvertedValue[2];
+    ADC_PhaseV_Curr[i] = ADC_ConvertedValue[1];
+    ADC_BUS_Curr[i] = ADC_ConvertedValue[0];
+
+    i++;
+    if (i >= 64) i = 0;
+    // 对于相电流和母线电流的电阻法测量电流,需要上电读取初始偏执电压
+    if (logicContr.drive_car == 0)  //
+    {
+        uint32_t sum_U = 0;
+        uint32_t sum_V = 0;
+        uint32_t sum_BUS = 0;
+        uint8_t i;
+        for (i = 0; i < 64; i++) {
+            sum_U += ADC_PhaseU_Curr[i];
+            sum_V += ADC_PhaseV_Curr[i];
+            sum_BUS += ADC_BUS_Curr[i];
+        }
+        ADCSampPare.OffsetPhaseU_Curr = sum_U / 64;
+        ADCSampPare.OffsetPhaseV_Curr = sum_V / 64;
+        ADCSampPare.OffsetBUS_Curr = sum_BUS / 64;
+    }
 }
 
 // 相电流是-2048到2048 

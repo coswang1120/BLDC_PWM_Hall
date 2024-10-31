@@ -27,8 +27,10 @@
 #include <math.h>
 
 //extern  Hall           Hall_Three;
-extern  TaskTime       TaskTimePare;
+
 //extern int16_t IQSin_Cos_Table[256];
+
+extern  TaskTime       TaskTimePare;
 
 void SysTickConfig(void) {
     /* Setup SysTick Timer for 1ms interrupts  */

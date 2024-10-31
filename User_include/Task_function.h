@@ -27,7 +27,7 @@ typedef struct {
 	    uint8_t    Run_mode;        // 正反转运行状态
 	    uint16_t   Qiehuan_count;  // 切换状态的计数值
 	    uint8_t    Start_order;      //启动PWM，启动电机
-	   	 }logic;
+	   	 } logic;
 
 #define  logic_DEFAULTS  {0,0,0,0,0,0,0,0} // 初始化参数
  

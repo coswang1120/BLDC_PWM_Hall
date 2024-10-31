@@ -29,7 +29,7 @@ typedef struct {
 	     int32_t   OffsetPhaseV_Curr;   // V相电流偏执值 Phase V Current
 	     int32_t   Coeff_filterK1;   // 一阶低通滤波器系数1
 		 int32_t   Coeff_filterK2;   // 一阶低通滤波器系数2
-}ADCSamp;
+} ADCSamp;
 
 #define  ADCSamp_DEFAULTS  {0,0,0,0,0,0,0,0,0,1000,24}   // 初始化参数
 

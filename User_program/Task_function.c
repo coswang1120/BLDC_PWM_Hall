@@ -18,12 +18,12 @@
 #include "ADC_int.h"
 #include "Tim1_PWM.h"
 
-extern  ADCSamp        ADCSampPare;
+extern ADCSamp        ADCSampPare;
 extern  TaskTime       TaskTimePare;
 extern  PI_Control     pi_spd  ;
 extern  logic          logicContr;
 extern  u16 spdcmd;
-
+extern    logic       logicContr;
 void knob_control(void)
 {
 //  电位器给定0.3V左右开始开启PWM给定速度和电压 
