@@ -143,6 +143,7 @@ int main(void) {
                               // printf("%d \r\n",Hall_Three.Speed_RPMF);
 
 
+
         //printf("OK\r\n");
 
         // if (USART_RX_STA == 1) {
