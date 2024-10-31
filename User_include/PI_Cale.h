@@ -12,29 +12,29 @@
 //电机控制QQ群：314306105
 //############################################################
 
-#ifndef  PI_Cale_H
-#define  PI_Cale_H
+#ifndef  __PI_CALE_H
+#define  __PI_CALE_H
 
 #include "IQ_math.h"
 #include "stm32f10x.h"
 
 typedef struct {
-	     int32_t  Ref;   // PI控制的给定参数
-			 int32_t  Fbk;   // PI控制的反馈参数 			 
-			 int32_t  Out;   // PI控制的输出参数 		 
-			 int32_t  OutF;  // PI控制的滤波后输出参数 	
-			 int32_t  Kp;		 // PI控制的比例参数 	 
-			 int32_t  Ki;		 // PI控制的积分参数 	  
-			 int32_t  Umax;	 // PI控制的输出限制最大幅值参数 	  	 
-			 int32_t  Umin;	 // PI控制的输出限制最小幅值参数 	 
-			 int32_t  up;		 // PI控制的比例项输出参数 
-			 int32_t  ui;		 // PI控制的积分项输出参数 	 
-			 int32_t  v1;		 // PI控制的历史输出项参数 	 	 
-			 int32_t  i1;		 // PI控制的历史积分项输出参数 	 		 
-	   } PI_Control, *p_PI_Control ;
+    int32_t Ref;   // PI控制的给定参数
+    int32_t Fbk;   // PI控制的反馈参数
+    int32_t Out;   // PI控制的输出参数
+    int32_t OutF;  // PI控制的滤波后输出参数
+    int32_t Kp;    // PI控制的比例参数
+    int32_t Ki;    // PI控制的积分参数
+    int32_t Umax;  // PI控制的输出限制最大幅值参数
+    int32_t Umin;  // PI控制的输出限制最小幅值参数
+    int32_t up;    // PI控制的比例项输出参数
+    int32_t ui;    // PI控制的积分项输出参数
+    int32_t v1;    // PI控制的历史输出项参数
+    int32_t i1;    // PI控制的历史积分项输出参数
+} PI_Control, *p_PI_Control;
 
 #define PI_Control_DEFAULTS {0,0,0,0,0,0,32000,0,0,0,0,0}  // 初始化参数
 
 void  PI_Controller(p_PI_Control  pV);  //PI控制算法函数
 void  PI_Pare_init(void );    //PI控制参数初始化
-#endif /* PI_Cale*/
+#endif   /* __PI_CALE_H */

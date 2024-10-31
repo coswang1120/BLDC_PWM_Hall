@@ -42,6 +42,9 @@ extern  logic   logicContr;
 	
 }
 
+// CCW  41    16   63   32   25     54
+// CW   32    25   54   41   16     63
+
 
 void ThreeHall_huanxkz(void)  // 一个PWM周期执行一次
 {
@@ -64,60 +67,60 @@ void ThreeHall_huanxkz(void)  // 一个PWM周期执行一次
       {
      	   switch (Hall_Three.Hall_State )
 	      {
-					case  Hall_num1:     // 0x5
+					case  Hall_num1:     // 0x6
 					 {
 					 if( logicContr.Run_mode==1)
-						MOS_Q63PWM();
+					 MOS_Q41PWM();
 						if( logicContr.Run_mode==2)
 						
-						MOS_Q54PWM();
+						 MOS_Q32PWM();
 					
 					 }
 					break;
-					case  Hall_num2:      // 0x1
+					case  Hall_num2:      // 0x4
 					 {
 					if( logicContr.Run_mode==1)
-						MOS_Q32PWM();
+						 MOS_Q16PWM();
 					if( logicContr.Run_mode==2)
 						
-					  MOS_Q41PWM();
+					   MOS_Q25PWM();
 					  
 					 }
 					break;
-					case  Hall_num3:     //0x3
+					case  Hall_num3:     //0x5
 					 {
 						if( logicContr.Run_mode==1)
-						MOS_Q25PWM();
+						 MOS_Q63PWM();
 						if( logicContr.Run_mode==2)
-						MOS_Q16PWM();
+						 MOS_Q54PWM();
 						
 						
 					 }
 					 break;
-					 case Hall_num4:    // 0x2
+					 case Hall_num4:    // 0x1
 					 {
 						 if( logicContr.Run_mode==1)
-						  MOS_Q54PWM();
+						   MOS_Q32PWM();
 						 if( logicContr.Run_mode==2)
-							MOS_Q63PWM();
+							 MOS_Q41PWM();
 						  
 						}
 					 break;
-					 case Hall_num5:    // 0x6
+					 case Hall_num5:    // 0x3
 					 {
 						 if( logicContr.Run_mode==1)
-					  	MOS_Q41PWM();
+					  	 MOS_Q25PWM();
 						 if( logicContr.Run_mode==2)
-							MOS_Q32PWM();
+							 MOS_Q16PWM();
 						  
 					 }
 					 break;
-					 case Hall_num6:   // 0x4
+					 case Hall_num6:   // 0x2
 						{
 						if( logicContr.Run_mode==1)
-							MOS_Q16PWM();
+							 MOS_Q54PWM();
 						if( logicContr.Run_mode==2)
-							MOS_Q25PWM();
+							 MOS_Q63PWM();
 						  
 						
 						}
@@ -151,63 +154,73 @@ void ThreeHall_huanxkz(void)  // 一个PWM周期执行一次
 				 
 				 
 				 
-			   switch (Hall_Three.Hall_State )     //6%     2      %4      6      %2    4      %6
-					{
-				   case Hall_num1:  //  0x5
-						{
-						if( logicContr.Run_mode==1)
-							 MOS_Q63PWM();
+			   switch (Hall_Three.Hall_State )
+	      {
+					case  Hall_num1:     // 0x6
+					 {
+					 if( logicContr.Run_mode==1)
+					 MOS_Q41PWM();
 						if( logicContr.Run_mode==2)
-							 MOS_Q54PWM();
-					    
-						}
-						break;
-				   case  Hall_num2:   //0x1
-						{
+						
+						 MOS_Q32PWM();
+					
+					 }
+					break;
+					case  Hall_num2:      // 0x4
+					 {
+					if( logicContr.Run_mode==1)
+						 MOS_Q16PWM();
+					if( logicContr.Run_mode==2)
+						
+					   MOS_Q25PWM();
+					  
+					 }
+					break;
+					case  Hall_num3:     //0x5
+					 {
 						if( logicContr.Run_mode==1)
-							MOS_Q32PWM();
+						 MOS_Q63PWM();
 						if( logicContr.Run_mode==2)
-								MOS_Q41PWM();
-				       
-						}
+						 MOS_Q54PWM();
+						
+						
+					 }
 					 break;
-				   case Hall_num3:   // 0x3
-						{
-							if( logicContr.Run_mode==1)
-							MOS_Q25PWM();
-							if( logicContr.Run_mode==2)
-							MOS_Q16PWM();
+					 case Hall_num4:    // 0x1
+					 {
+						 if( logicContr.Run_mode==1)
+						   MOS_Q32PWM();
+						 if( logicContr.Run_mode==2)
+							 MOS_Q41PWM();
 						  
 						}
-						break;
-				    case  Hall_num4: // 0x2
-						{
-							 if( logicContr.Run_mode==1)
-							MOS_Q54PWM();
-							 if( logicContr.Run_mode==2)
-								MOS_Q63PWM();
-						   
-						}
-					  break;
-				    case  Hall_num5:  //0x6
-						{
+					 break;
+					 case Hall_num5:    // 0x3
+					 {
 						 if( logicContr.Run_mode==1)
-							MOS_Q41PWM();
+					  	 MOS_Q25PWM();
 						 if( logicContr.Run_mode==2)
-									MOS_Q32PWM();
-						     
-						}
-						break;
-				    case  Hall_num6:   // 0x4
+							 MOS_Q16PWM();
+						  
+					 }
+					 break;
+					 case Hall_num6:   // 0x2
 						{
 						if( logicContr.Run_mode==1)
-						 MOS_Q16PWM();
+							 MOS_Q54PWM();
 						if( logicContr.Run_mode==2)
-						 MOS_Q25PWM();
-						    
+							 MOS_Q63PWM();
+						  
+						
 						}
-					 break;	 
-					}
+					 break;
+						 default:
+						 {
+							Stop_Motor();
+							Hall_Three.Speed_RPM=0;
+						 }
+					 break;
+	    	 }	
 
 
 

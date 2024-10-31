@@ -28,7 +28,6 @@
 ".\output\main.o"
 ".\output\stm32f10x_it.o"
 ".\output\adc_int.o"
-".\output\can.o"
 ".\output\gpio_int.o"
 ".\output\iq_math.o"
 ".\output\pi_cale.o"
