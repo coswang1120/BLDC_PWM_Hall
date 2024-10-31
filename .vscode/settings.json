@@ -1,8 +1,6 @@
 {
   "files.autoSave": "afterDelay",
   "files.associations": {
-    "*.cpp": "cpp",
-    "*.h": "cpp",
     "algorithm": "cpp",
     "functional": "cpp",
     "chrono": "cpp",
@@ -29,8 +27,7 @@
     "ratio": "cpp",
     "led.h": "c",
     "usart.h": "c",
-    "iq_math.h": "c",
-    "cstdint": "cpp"
+    "iq_math.h": "c"
   },
   "files.exclude": {
     ".git/": false
@@ -110,9 +107,5 @@
   "C_Cpp_Runner.useLinkTimeOptimization": false,
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "Codegeex.RepoIndex": true,
-  "stm32-for-vscode.armToolchainPath": "C:\\PROGRAM FILES (X86)\\ARM GNU TOOLCHAIN ARM-NONE-EABI\\13.3 REL1\\BIN",
-  "workbench.colorCustomizations": {
-    "minimap.background": "#00000000",
-    "scrollbar.shadow": "#00000000"
-  }
+  "stm32-for-vscode.armToolchainPath": "C:\\PROGRAM FILES (X86)\\ARM GNU TOOLCHAIN ARM-NONE-EABI\\13.3 REL1\\BIN"
 }

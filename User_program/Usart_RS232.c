@@ -145,7 +145,7 @@ void  Uart3_RS232TX_sen(void)
 
 
 		// (float)TestPare.Speed_fact  [true rotaional speed]   (int)logicContr.Run_mode    (int)ccw   (int)logicContr.Control_Mode       (float)TestPare.fact_BUS_Curr    (float)TestPare.fact_BUS_Voil    (float)ADCSampPare.BUS_CurrF;	  (float)ADCSampPare.PhaseV_Curr   (float)ADCSampPare.BUS_Voltage   (float)ADCSampPare.PhaseU_Curr
-	  //printf("%4.2f,%d,%d,%4.2f,%4.2f,%4.2f,%4.2f,%6.2f,%6.2f \r\n",(float)TestPare.Speed_fact,(int)logicContr.Run_mode,(int)logicContr.Control_Mode,(float)ADCSampPare.BUS_CurrF,(float)ADCSampPare.PhaseV_Curr,(float)ADCSampPare.BUS_Voltage,(float)ADCSampPare.PhaseU_Curr,(float)pi_spd.OutF,(float)pi_ICurr.OutF);
+	  printf("%4.2f,%d,%d,%4.2f,%4.2f,%4.2f,%4.2f,%6.2f,%6.2f \r\n",(float)TestPare.Speed_fact,(int)logicContr.Run_mode,(int)logicContr.Control_Mode,(float)ADCSampPare.BUS_CurrF,(float)ADCSampPare.PhaseV_Curr,(float)ADCSampPare.BUS_Voltage,(float)ADCSampPare.PhaseU_Curr,(float)pi_spd.OutF,(float)pi_ICurr.OutF);
 
 
 

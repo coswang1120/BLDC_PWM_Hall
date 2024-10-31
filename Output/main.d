@@ -27,5 +27,7 @@
 .\output\main.o: .\User_include\PI_Cale.h
 .\output\main.o: .\User_include\Task_function.h
 .\output\main.o: .\User_include\Usart_RS232.h
+.\output\main.o: .\User_include\CAN.h
+.\output\main.o: .\FWlib\inc\stm32f10x_can.h
 .\output\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\output\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

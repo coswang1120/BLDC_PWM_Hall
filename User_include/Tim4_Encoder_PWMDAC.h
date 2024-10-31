@@ -12,14 +12,14 @@
 //电机控制QQ群：314306105
 //############################################################
    
-#ifndef __TIM4_ENCODER_PWMDAC_H
-#define __TIM4_ENCODER_PWMDAC_H 
+#ifndef _Tim4_Encoder_PWMDAC_H
+#define _Tim4_Encoder_PWMDAC_H 
 
 #include "IQ_math.h"
 #include "stm32f10x.h"
  
 void TIM4PWMDAC_Config(void); //定时器4的编码器部分初始化 
-#endif /* __TIM4_ENCODER_PWMDAC_H  */
+#endif /* __Tim4_Encoder_PWMDAC_H */
 
 //===========================================================================
 // No more.
