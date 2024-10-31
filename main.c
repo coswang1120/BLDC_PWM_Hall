@@ -143,37 +143,6 @@ int main(void) {
                               // printf("%d \r\n",Hall_Three.Speed_RPMF);
 
 
-
-
-        //printf("OK\r\n");
-
-        // if (USART_RX_STA == 1) {
-        //     //
-
-        //     if (Res == '1') {
-        //         logicContr.Control_Mode = 1;
-        //         spdcmd = 500;
-        //     } else if (Res == '2') {
-        //         logicContr.Control_Mode = 1;
-        //         spdcmd = 800;
-
-        //     } else if (Res == '3') {
-        //         logicContr.Control_Mode = 1;
-        //         spdcmd = 1000;
-
-        //     } else if (Res == '0') {
-        //         logicContr.Control_Mode = 1;
-        //         spdcmd = 0;
-
-        //     }
-
-        //     else {
-        //         logicContr.Control_Mode = 2;
-        //         // printf("Others\r\n");
-        //     }
-        //     // printf("%d \r\n",logicContr.Control_Mode);
-        //     USART_RX_STA = 0;
-        // }
 }
 }
 
