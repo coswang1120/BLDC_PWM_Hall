@@ -66,9 +66,12 @@
 #include "CAN.h"
 #include <stdio.h>
 #include <math.h>
+#include <main.h>
+#include <hello_world.h>
 
-    u16 t;
-    u16 len;
+
+u16 t;
+u16 len;
 long numdec=0;
 float syst=0.0;
 PI_Control   pi_spd = PI_Control_DEFAULTS;
@@ -85,8 +88,8 @@ u16 spdcmd;
 extern  uint16_t  DUTY;
 u8 Res;
 
-int fputc( int ch , FILE *f);
- 
+
+
 
 int fputc( int ch , FILE *f)  // print function for RS232
 {
