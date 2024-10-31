@@ -87,7 +87,7 @@ extern  uint16_t  DUTY;
 u8 Res;
 
 int fputc( int ch , FILE *f);
- 
+
 
 int fputc( int ch , FILE *f)  // print function for RS232
 {
