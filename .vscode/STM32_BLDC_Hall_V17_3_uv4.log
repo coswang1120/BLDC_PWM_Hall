@@ -3,22 +3,24 @@ Set JLink Project File to "d:\prog\STM32\STM32\stm32\STM32prog\BLDC_PWM_Hall_vsc
  
 JLink info:
 ------------
-DLL: V8.10d, compiled Oct 24 2024 09:58:28
+DLL: V6.30h, compiled Mar 16 2018 18:02:51
 Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
 Hardware: V8.00
 S/N : 788529235 
 Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDB 
  
+<<<<<<< HEAD
 * JLink Info: InitTarget() start
 * JLink Info: SWD selected. Executing JTAG -> SWD switching sequence.
 * JLink Info: DAP initialized successfully.
-* JLink Info: InitTarget() end - Took 18.7ms
+* JLink Info: InitTarget() end - Took 21.5ms
+=======
+>>>>>>> parent of fcd2fc8 (修正 preintf 發不出 (發現是模組現有問題) & 修正Control_Mode==1 不會動 (發現是之前 是需要接受命令))
 * JLink Info: Found SW-DP with ID 0x1BA01477
-* JLink Info: DPv0 detected
-* JLink Info: CoreSight SoC-400 or earlier
+* JLink Info: Found SW-DP with ID 0x1BA01477
 * JLink Info: Scanning AP map to find all available APs
 * JLink Info: AP[1]: Stopped AP scan as end of AP map has been reached
-* JLink Info: AP[0]: AHB-AP (IDR: 0x14770011, ADDR: 0x00000000)
+* JLink Info: AP[0]: AHB-AP (IDR: 0x14770011)
 * JLink Info: Iterating through AP map to find AHB-AP to use
 * JLink Info: AP[0]: Core found
 * JLink Info: AP[0]: AHB-AP ROM base: 0xE00FF000
@@ -27,35 +29,32 @@ Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDB
 * JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
 * JLink Info: CoreSight components:
 * JLink Info: ROMTbl[0] @ E00FF000
-* JLink Info: [0][0]: E000E000 CID B105E00D PID 001BB000 SCS
-* JLink Info: [0][1]: E0001000 CID B105E00D PID 001BB002 DWT
-* JLink Info: [0][2]: E0002000 CID B105E00D PID 000BB003 FPB
-* JLink Info: [0][3]: E0000000 CID B105E00D PID 001BB001 ITM
-* JLink Info: [0][4]: E0040000 CID B105900D PID 001BB923 TPIU-Lite
+* JLink Info: ROMTbl[0][0]: E000E000, CID: B105E00D, PID: 001BB000 SCS
+* JLink Info: ROMTbl[0][1]: E0001000, CID: B105E00D, PID: 001BB002 DWT
+* JLink Info: ROMTbl[0][2]: E0002000, CID: B105E00D, PID: 000BB003 FPB
+* JLink Info: ROMTbl[0][3]: E0000000, CID: B105E00D, PID: 001BB001 ITM
+* JLink Info: ROMTbl[0][4]: E0040000, CID: B105900D, PID: 001BB923 TPIU-Lite
 ROMTableAddr = 0xE00FF000
-* JLink Info: Reset type: NORMAL (https://wiki.segger.com/J-Link_Reset_Strategies)
-
 * JLink Info: Reset: Halt core after reset via DEMCR.VC_CORERESET.
 * JLink Info: Reset: Reset device via AIRCR.SYSRESETREQ.
  
 Target info:
 ------------
 Device: STM32F103C8
-VTarget = 3.351V
+VTarget = 3.345V
 State of Pins: TCK: 1, TDI: 1, TDO: 1, TMS: 1, TRES: 1, TRST: 1
 Hardware-Breakpoints: 6
 Software-Breakpoints: 8192
 Watchpoints:          4
 JTAG speed: 4000 kHz
  
-* JLink Info: Memory map 'after startup completion point' is active
-Erase Done.Programming Done.Verify OK.* JLink Info: Memory map 'before startup completion point' is active
-* JLink Info: Reset type: NORMAL (https://wiki.segger.com/J-Link_Reset_Strategies)
-
-* JLink Info: Reset: Halt core after reset via DEMCR.VC_CORERESET.
+Erase Done.Programming Done.Verify OK.* JLink Info: Reset: Halt core after reset via DEMCR.VC_CORERESET.
 * JLink Info: Reset: Reset device via AIRCR.SYSRESETREQ.
-* JLink Info: Memory map 'after startup completion point' is active
 Application running ...
+<<<<<<< HEAD
 * JLink Info: OnDisconnectTarget() start
-* JLink Info: OnDisconnectTarget() end - Took 598us
-Flash Load finished at 13:38:48
+* JLink Info: OnDisconnectTarget() end - Took 663us
+Flash Load finished at 15:10:53
+=======
+Flash Load finished at 23:26:09
+>>>>>>> parent of fcd2fc8 (修正 preintf 發不出 (發現是模組現有問題) & 修正Control_Mode==1 不會動 (發現是之前 是需要接受命令))

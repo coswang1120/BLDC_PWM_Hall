@@ -96,13 +96,13 @@ void TIM1_UP_IRQHandler(void)// 触发ADC中断采样和电机环路控制   83.333us
 			 
 				 if(logicContr.Control_Mode==1)
 				 {
-						DUTY = 2*pi_spd.Ref;  // 速度 电压开环 PWM输出    max (pi_spd.Ref)=2500 
-					  //DUTY = 2*spdcmd; 
+						//DUTY = 2*pi_spd.Ref;  // 速度 电压开环 PWM输出    max (pi_spd.Ref)=2500 
+					  DUTY = 2*spdcmd; 
 					  //printf("%d \r\n",DUTY);
 					 
-				// 	  if(DUTY>=2500){   //限制最大转速
- 	            //   DUTY=2500;
-				// 		}			 
+					  if(DUTY>=2500){   //限制最大转速
+ 	              DUTY=2500;
+						}			 
 					 
 				 } 
 				 else if(logicContr.Control_Mode==2)  //电流环速度环闭环，母线电流闭环做限制母线电流控制
