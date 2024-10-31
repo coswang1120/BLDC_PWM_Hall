@@ -80,7 +80,7 @@ logic        logicContr=logic_DEFAULTS;
 ADCSamp      ADCSampPare=ADCSamp_DEFAULTS;
 Hall         Hall_Three=Hall_DEFAULTS ;
 // CANSR        CANSRPare=CANSR_DEFAULTS;
-extern u16 Tag; 
+extern u16 Tag;
 u16 USART_RX_STA;
 u16 spdcmd;
 extern  uint16_t  DUTY;
