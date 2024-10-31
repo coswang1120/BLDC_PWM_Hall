@@ -2,7 +2,7 @@
 // FILE: IQ_math.h
 // Created on: 2017年1月18日
 // Author: XQ
-// summary: IQ_math_ 
+// summary: IQ_math_
 //本程序只供学习使用，未经作者许可，不得用于其它任何用途
 //版权所有，盗版必究
 //DSP/STM32电机控制开发板
@@ -11,14 +11,14 @@
 //Author-QQ: 616264123
 //电机控制QQ群：314306105
 //############################################################
-   
+
 #ifndef __IQ_math_H
-#define __IQ_math_H 
+#define __IQ_math_H
 
 #include "stm32f10x.h"
 
 //共256个数
- 
+
 #define Abs(A)    ((A>=0)?A:-A)  // 绝对值函数
 #define Min(A,B)  ((A<=B)?A:B)   // 求最小函数
 #define Max(A,B)  ((A>=B)?A:B)   // 求最大函数
@@ -59,11 +59,11 @@ typedef struct {
     int32_t IQCos;    // IQ格式余弦参数，-32768---32767  -1到1
 } IQSin_Cos, *p_IQSin_Cos;
 
-static inline int32_t _IQ15_CHECK_RANGE(int32_t x) {
-    if (x > _IQ15_MAX) return _IQ15_MAX;
-    if (x < _IQ15_MIN) return _IQ15_MIN;
-    return x;
-}
+// static inline int32_t _IQ15_CHECK_RANGE(int32_t x) {
+//     if (x > _IQ15_MAX) return _IQ15_MAX;
+//     if (x < _IQ15_MIN) return _IQ15_MIN;
+//     return x;
+// }
 
 #define IQSin_Cos_DEFAULTS  {0,0,0} // 初始化参数
 

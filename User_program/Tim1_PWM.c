@@ -102,8 +102,7 @@ void Stop_Motor(void) {
     TIM_CCxNCmd(TIM1, TIM_Channel_3, TIM_CCxN_Disable);
 }
 
-void MOS_Q41PWM(
-    void)  // 61   ??     5  4  6   2  3   1     Q63  Q32  Q25  Q54  Q41  Q16
+void MOS_Q41PWM(void)  // 61   ??     5  4  6   2  3   1     Q63  Q32  Q25  Q54  Q41  Q16
 {
     //   1 on                 3                 5
     //     2                    4  on             6
@@ -120,8 +119,8 @@ void MOS_Q41PWM(
     TIM_CCxCmd(TIM1, TIM_Channel_3, TIM_CCx_Disable);
     TIM_CCxNCmd(TIM1, TIM_Channel_3, TIM_CCxN_Disable);
 
-    TIM_SetCompare1(TIM1, DUTY);  //  control comand
-    TIM_SetCompare2(TIM1, 0);     //  control comand
+    TIM_SetCompare1(TIM1, DUTY);  //  control command
+    TIM_SetCompare2(TIM1, 0);     //  control command
 }
 
 void MOS_Q16PWM(void)
@@ -160,8 +159,8 @@ void MOS_Q63PWM(void)
     TIM_SelectOCxM(TIM1, TIM_Channel_3, TIM_OCMode_PWM1);
     TIM_CCxCmd(TIM1, TIM_Channel_3, TIM_CCx_Enable);
     TIM_CCxNCmd(TIM1, TIM_Channel_3, TIM_CCxN_Enable);
-    TIM_SetCompare2(TIM1, DUTY);  //  control comand
-    TIM_SetCompare3(TIM1, 0);     //  control comand
+    TIM_SetCompare2(TIM1, DUTY);  //  control command
+    TIM_SetCompare3(TIM1, 0);     //  control command
 }
 
 void MOS_Q32PWM(void)
@@ -181,8 +180,8 @@ void MOS_Q32PWM(void)
 
     TIM_CCxCmd(TIM1, TIM_Channel_3, TIM_CCx_Disable);
     TIM_CCxNCmd(TIM1, TIM_Channel_3, TIM_CCxN_Disable);
-    TIM_SetCompare1(TIM1, 0);     //  control comand
-    TIM_SetCompare2(TIM1, DUTY);  //  control comand
+    TIM_SetCompare1(TIM1, 0);     //  control command
+    TIM_SetCompare2(TIM1, DUTY);  //  control command
 }
 
 void MOS_Q25PWM(void)
@@ -202,8 +201,8 @@ void MOS_Q25PWM(void)
     TIM_SelectOCxM(TIM1, TIM_Channel_3, TIM_OCMode_PWM1);
     TIM_CCxCmd(TIM1, TIM_Channel_3, TIM_CCx_Enable);
     TIM_CCxNCmd(TIM1, TIM_Channel_3, TIM_CCxN_Enable);
-    TIM_SetCompare1(TIM1, 0);     //  control comand
-    TIM_SetCompare3(TIM1, DUTY);  //  control comand
+    TIM_SetCompare1(TIM1, 0);     //  control command
+    TIM_SetCompare3(TIM1, DUTY);  //  control command
 }
 
 void MOS_Q54PWM(void)
@@ -223,8 +222,8 @@ void MOS_Q54PWM(void)
     TIM_SelectOCxM(TIM1, TIM_Channel_3, TIM_OCMode_PWM1);
     TIM_CCxCmd(TIM1, TIM_Channel_3, TIM_CCx_Enable);
     TIM_CCxNCmd(TIM1, TIM_Channel_3, TIM_CCxN_Enable);
-    TIM_SetCompare2(TIM1, 0);     //  control comand
-    TIM_SetCompare3(TIM1, DUTY);  //  control comand
+    TIM_SetCompare2(TIM1, 0);     //  control command
+    TIM_SetCompare3(TIM1, DUTY);  //  control command
 }
 
 //===========================================================================

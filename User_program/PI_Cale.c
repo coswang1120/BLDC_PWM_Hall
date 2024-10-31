@@ -32,20 +32,18 @@ void  PI_Controller(p_PI_Control  pV)
 	pV->Out=IQsat( pV->v1, pV->Umax,  pV->Umin); //限制输出
 }
 
-void  PI_Pare_init(void )
-{
-	//_IQmpy 是移位2…^15次方 所以Kp/32768   Ki/32768
-  pi_spd.Kp=12000;     // _ 
-  pi_spd.Ki=1060;  //    T* 环路周期 /0.2
-  pi_spd.Umax =5950;  //  
-  pi_spd.Umin =0;
-	
-	pi_ICurr.Kp=9000;     // _ 
-	pi_ICurr.Ki=880;  //    T* 环路周期 /0.2
-  pi_ICurr.Umax =5950;  //  
-  pi_ICurr.Umin =0;		
-	
- }
+void PI_Pare_init(void) {
+    //_IQmpy 是移位2…^15次方 所以Kp/32768   Ki/32768
+    pi_spd.Kp = 12000;   // _
+    pi_spd.Ki = 1060;    //    T* 环路周期 /0.2
+    pi_spd.Umax = 5950;  //
+    pi_spd.Umin = 0;
+
+    pi_ICurr.Kp = 9000;    // _
+    pi_ICurr.Ki = 880;     //    T* 环路周期 /0.2
+    pi_ICurr.Umax = 5950;  //
+    pi_ICurr.Umin = 0;
+}
 
 //===========================================================================
 // No more.

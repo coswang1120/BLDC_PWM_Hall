@@ -84,132 +84,120 @@ const int32_t IQAtan2_Table[256]={\
 0x00035EE7,0x000384F5,0x0003AE73,0x0003DBDD,0x00040DCB,0x000444F4,0x00048236,0x0004C6A6,\
 0x0005139B,0x00056AC9,0x0005CE63,0x00064144,0x0006C740,0x0007658D,0x00082374,0x00090B81,\
 0x000A2D7F,0x000BA246,0x000D9338,0x00104AD7,0x00145E24,0x001B28CC,0x0028BDDA,0x00517C7E };
- 
- 
-void  IQSin_Cos_Cale(p_IQSin_Cos  pV)  
-{
-  uint16_t  hindex;
-  hindex = (uint16_t) pV->IQAngle; //-32768--- 32767 +32768===0--65535
-  hindex >>=6;      //65536/64  ===1024/4=90度=256 0x01-0xFF  0X100  0X1FF  0X200 0X2FF    0X300  0X3FF
-                                                      
-  switch (hindex & SIN_RAD)  //  0X300  &   0x0000 -ff    0x0100  1ff   0X200    2ff   0x0300   3ff  
-  {
-    case U0_90:                        
-       pV->IQSin = IQSin_Cos_Table[(uint8_t)(hindex)];  // 0---255  ==0---32766
-       pV->IQCos = IQSin_Cos_Table[(uint8_t)(0xFF-(u8)(hindex))];
-    break;
-  
-    case U90_180:  
-       pV->IQSin = IQSin_Cos_Table[(u8)(0xFF-(u8)(hindex))]; // 255---0 == 0---32766 
-       pV->IQCos = -IQSin_Cos_Table[(u8)(hindex)];
-    break;
-  
-    case U180_270:
-       pV->IQSin = -IQSin_Cos_Table[(u8)(hindex)];
-       pV->IQCos = -IQSin_Cos_Table[(u8)(0xFF-(u8)(hindex))];
-    break;
-  
-    case U270_360:
-     pV->IQSin=  -IQSin_Cos_Table[(u8)(0xFF-(u8)(hindex))];
-     pV->IQCos =  IQSin_Cos_Table[(u8)(hindex)]; 
-    break;
-   default:
-    break;
-  } 
-} 
- 
-int32_t  IQsat( int32_t Uint,int32_t  U_max, int32_t U_min) //限制赋值函数
-{
-	 int32_t Uout; 
- 	if(Uint<= U_min)
-		Uout= U_min;
-	else if( Uint>=U_max)
-		Uout=U_max;
-	else
-	  Uout= Uint;   
- 
-  return  Uout; 
+
+void IQSin_Cos_Cale(p_IQSin_Cos pV) {
+    uint16_t hindex;
+    hindex = (uint16_t)pV->IQAngle;  //-32768--- 32767 +32768===0--65535
+    hindex >>= 6;  // 65536/64  ===1024/4=90度=256 0x01-0xFF  0X100  0X1FF 0X200
+                   // 0X2FF    0X300  0X3FF
+
+    switch (hindex & SIN_RAD)  //  0X300  &   0x0000 -ff    0x0100  1ff   0X200
+                               //  2ff   0x0300   3ff
+    {
+        case U0_90:
+            pV->IQSin =
+                IQSin_Cos_Table[(u8)(hindex)];  // 0---255  ==0---32766
+            pV->IQCos = IQSin_Cos_Table[(u8)(0xFF - (u8)(hindex))];
+            break;
+
+        case U90_180:
+            pV->IQSin = IQSin_Cos_Table[(
+                u8)(0xFF - (u8)(hindex))];  // 255---0 == 0---32766
+            pV->IQCos = -IQSin_Cos_Table[(u8)(hindex)];
+            break;
+
+        case U180_270:
+            pV->IQSin = -IQSin_Cos_Table[(u8)(hindex)];
+            pV->IQCos = -IQSin_Cos_Table[(u8)(0xFF - (u8)(hindex))];
+            break;
+
+        case U270_360:
+            pV->IQSin = -IQSin_Cos_Table[(u8)(0xFF - (u8)(hindex))];
+            pV->IQCos = IQSin_Cos_Table[(u8)(hindex)];
+            break;
+        default:
+            break;
+    }
 }
 
-void  IQAtan_Cale(p_IQAtan pV)  // 求取求反正弦函数
+int32_t IQsat(int32_t Uint, int32_t U_max, int32_t U_min)  // 限制赋值函数
 {
-  int16_t   i=0; 
-    if( pV->Alpha == 0) 
-    { 
-        if (pV->Beta==0) 
-					i =0; 
-        else       
-					i =255; 
-    } 
-    else 
-    {  
-      pV->IQTan = _IQdiv( Abs(pV->Beta) , Abs(pV->Alpha)); 
- 
-			if (IQAtan2_Table[i + 128] <= pV->IQTan) i += 128; 
-			if (IQAtan2_Table[i + 64] <= pV->IQTan) i += 64; 
-			if (IQAtan2_Table[i + 32] <= pV->IQTan) i += 32; 
-			if (IQAtan2_Table[i + 16] <= pV->IQTan) i += 16; 
-			if (IQAtan2_Table[i + 8] <= pV->IQTan) i += 8; 
-			if (IQAtan2_Table[i + 4] <= pV->IQTan) i += 4; 
-			if (IQAtan2_Table[i + 2] <= pV->IQTan) i += 2; 
-			if (IQAtan2_Table[i + 1] <= pV->IQTan) i += 1;    
+    int32_t Uout;
+    if (Uint <= U_min)
+        Uout = U_min;
+    else if (Uint >= U_max)
+        Uout = U_max;
+    else
+        Uout = Uint;
 
-		}
-		
-    if ( pV->Beta > 0) 
-    { 
-        if (pV->Alpha >0) 
-           pV->IQAngle =i ;      
-        else      
-           pV->IQAngle= 512 -i;     
-    } 
-    else 
-    {  
-        if ( pV->Alpha >0)
-           pV->IQAngle= 1024-i;  
-				else      
-           pV->IQAngle =i+512; 	
-    } 
-     if( pV->IQAngle<0)
-			 pV->IQAngle+=1024;
-   pV->IQAngle= pV->IQAngle<<6;
-	
+    return Uout;
 }
- 
- 
-uint32_t IQSqrt(uint32_t  M) //开方函数
+
+void IQAtan_Cale(p_IQAtan pV)  // 求取求反正弦函数
 {
-	uint32_t   N, i ,tmp  ,ttp;	
-  if ( M==0 )
-	  return 0;
-	N=0;
+    int16_t i = 0;
+    if (pV->Alpha == 0) {
+        if (pV->Beta == 0)
+            i = 0;
+        else
+            i = 255;
+    } else {
+        pV->IQTan = _IQdiv(Abs(pV->Beta), Abs(pV->Alpha));
 
-  tmp=(M>>30);	
+        if (IQAtan2_Table[i + 128] <= pV->IQTan) i += 128;
+        if (IQAtan2_Table[i + 64] <= pV->IQTan) i += 64;
+        if (IQAtan2_Table[i + 32] <= pV->IQTan) i += 32;
+        if (IQAtan2_Table[i + 16] <= pV->IQTan) i += 16;
+        if (IQAtan2_Table[i + 8] <= pV->IQTan) i += 8;
+        if (IQAtan2_Table[i + 4] <= pV->IQTan) i += 4;
+        if (IQAtan2_Table[i + 2] <= pV->IQTan) i += 2;
+        if (IQAtan2_Table[i + 1] <= pV->IQTan) i += 1;
+    }
 
-  M<<=2;
-	if( tmp>1 )
-	{
-	  N++;
-		tmp-=N;
-	}	
-	for (i=15;i>0;i--  )
-	{
-		N<<=1;
-		
-		tmp<<=2;
-		tmp+=(M>>30);
-		
-		ttp=N;	
-		ttp=(ttp<<1)+1;	
-		
-		M<<=2;
-		if( tmp>= ttp )
-		{
-			 tmp-=ttp;
-			 N++;
-		}
-	}	
-	 return N;			
+    if (pV->Beta > 0) {
+        if (pV->Alpha > 0)
+            pV->IQAngle = i;
+        else
+            pV->IQAngle = 512 - i;
+    } else {
+        if (pV->Alpha > 0)
+            pV->IQAngle = 1024 - i;
+        else
+            pV->IQAngle = i + 512;
+    }
+    if (pV->IQAngle < 0) pV->IQAngle += 1024;
+    pV->IQAngle = pV->IQAngle << 6;
+}
+
+uint32_t IQSqrt(uint32_t M)  // 开方函数
+{
+    uint32_t N, i, tmp, ttp;
+    if (M == 0) return 0;
+    N = 0;
+
+    tmp = (M >> 30);
+
+    M <<= 2;
+    if (tmp > 1) {
+        N++;
+        tmp -= N;
+    }
+    for (i = 15; i > 0; i--) {
+        N <<= 1;
+
+        tmp <<= 2;
+        tmp += (M >> 30);
+
+        ttp = N;
+        ttp = (ttp << 1) + 1;
+
+        M <<= 2;
+        if (tmp >= ttp) {
+            tmp -= ttp;
+            N++;
+        }
+    }
+    return N;
 }
 
 //===========================================================================
