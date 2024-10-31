@@ -68,6 +68,7 @@
 #include <stdio.h>
 #include <math.h>
 #include "main.h"
+//#include "hello_world.h"
 
 u16 t;
 u16 len;
@@ -80,7 +81,7 @@ TaskTime     TaskTimePare=TaskTime_DEFAULTS;
 logic        logicContr=logic_DEFAULTS;
 ADCSamp      ADCSampPare=ADCSamp_DEFAULTS;
 Hall         Hall_Three=Hall_DEFAULTS ;
-// CANSR        CANSRPare=CANSR_DEFAULTS;
+
 extern u16 Tag;
 u16 USART_RX_STA;
 u16 spdcmd;
@@ -131,6 +132,7 @@ int main(void) {
     PI_Pare_init();  // 三个双PID参数初始化
 
     while (1) {
+        //hello_world();
         RunSystimer();        // 时间任务标志初始化  call 10ms
         // CAN_Sendlen();        // CAN定时发送电机参数     // useless
         Uart3_RS232TX_sen();  // 串口3通讯的定时发送		  // send print
@@ -139,7 +141,7 @@ int main(void) {
         // CAN_Receivechuli();   // CAN通讯中断接收数据处理	 // useless
         CLEAR_flag();         // 清除时间任务标志   clear flag
                               // printf("%d \r\n",Hall_Three.Speed_RPMF);
-
+       
 
 }
 }

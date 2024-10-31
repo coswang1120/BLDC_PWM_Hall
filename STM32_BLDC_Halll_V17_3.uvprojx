@@ -623,6 +623,11 @@
               <FileType>1</FileType>
               <FilePath>.\User_program\Usart_RS232.c</FilePath>
             </File>
+            <File>
+              <FileName>hello_world.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\User_program\hello_world.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
