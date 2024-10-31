@@ -54,6 +54,7 @@
 
 t1
 t2
+t3
 
 
 #include "stm32f10x.h"
