@@ -27,7 +27,5 @@
 .\output\timer.o: .\User_include\PI_Cale.h
 .\output\timer.o: .\User_include\Task_function.h
 .\output\timer.o: .\User_include\Usart_RS232.h
-.\output\timer.o: .\User_include\CAN.h
-.\output\timer.o: .\FWlib\inc\stm32f10x_can.h
 .\output\timer.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\output\timer.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

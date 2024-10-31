@@ -34,6 +34,7 @@ Section Cross References
     main.o(.text) refers to tim1_pwm.o(.text) for Tim1_PWM_Init
     main.o(.text) refers to tim4_encoder_pwmdac.o(.text) for TIM4PWMDAC_Config
     main.o(.text) refers to pi_cale.o(.text) for PI_Pare_init
+    main.o(.text) refers to hello_world.o(.text) for hello_world
     main.o(.text) refers to main.o(.bss) for logicContr
     stm32f10x_it.o(.text) refers to tim1_pwm.o(.text) for Stop_Motor
     stm32f10x_it.o(.text) refers to stm32f10x_tim.o(.text) for TIM_ClearITPendingBit
@@ -371,7 +372,6 @@ Removing Unused input sections from the image.
     Removing stm32f10x_sdio.o(.text), (468 bytes).
     Removing stm32f10x_spi.o(.text), (780 bytes).
     Removing stm32f10x_wwdg.o(.text), (136 bytes).
-    Removing hello_world.o(.text), (28 bytes).
     Removing dadd.o(.text), (334 bytes).
     Removing dmul.o(.text), (228 bytes).
     Removing ddiv.o(.text), (222 bytes).
@@ -379,7 +379,7 @@ Removing Unused input sections from the image.
     Removing cdrcmple.o(.text), (48 bytes).
     Removing depilogue.o(.text), (186 bytes).
 
-25 unused section(s) (total 11490 bytes) removed from the image.
+24 unused section(s) (total 11462 bytes) removed from the image.
 
 ==============================================================================
 
@@ -391,33 +391,33 @@ Image Symbol Table
 
     ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
     ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf1.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf1.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
     ../clib/microlib/stdio/streams.c         0x00000000   Number         0  stdout.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
     ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
@@ -497,24 +497,28 @@ Image Symbol Table
     TI1_Config                               0x080017e7   Thumb Code   108  stm32f10x_tim.o(.text)
     .text                                    0x08001fa0   Section        0  stm32f10x_usart.o(.text)
     .text                                    0x080023a8   Section        0  main.o(.text)
-    .text                                    0x08002458   Section        0  stm32f10x_it.o(.text)
-    .text                                    0x08002478   Section        0  adc_int.o(.text)
-    .text                                    0x080026b8   Section        0  gpio_int.o(.text)
-    .text                                    0x080028d8   Section        0  iq_math.o(.text)
-    .text                                    0x08002ae0   Section        0  pi_cale.o(.text)
-    .text                                    0x08002b60   Section        0  task_function.o(.text)
-    .text                                    0x08002c80   Section        0  threehall.o(.text)
-    .text                                    0x08002f3c   Section        0  tim1_isr_mcloop.o(.text)
-    .text                                    0x08003098   Section        0  tim1_pwm.o(.text)
-    .text                                    0x08003498   Section        0  tim4_encoder_pwmdac.o(.text)
-    .text                                    0x08003568   Section        0  timer.o(.text)
-    NVIC_SetPriority                         0x08003569   Thumb Code    32  timer.o(.text)
-    .text                                    0x08003744   Section        0  usart_rs232.o(.text)
-    .text                                    0x08003a1c   Section       36  init.o(.text)
-    i.__scatterload_copy                     0x08003a40   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x08003a4e   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x08003a50   Section       14  handlers.o(i.__scatterload_zeroinit)
-    .constdata                               0x08003a60   Section     1536  iq_math.o(.constdata)
+    .text                                    0x08002454   Section        0  stm32f10x_it.o(.text)
+    .text                                    0x08002474   Section        0  adc_int.o(.text)
+    .text                                    0x080026b4   Section        0  gpio_int.o(.text)
+    .text                                    0x080028d4   Section        0  iq_math.o(.text)
+    .text                                    0x08002adc   Section        0  pi_cale.o(.text)
+    .text                                    0x08002b5c   Section        0  task_function.o(.text)
+    .text                                    0x08002c7c   Section        0  threehall.o(.text)
+    .text                                    0x08002f38   Section        0  tim1_isr_mcloop.o(.text)
+    .text                                    0x08003094   Section        0  tim1_pwm.o(.text)
+    .text                                    0x08003494   Section        0  tim4_encoder_pwmdac.o(.text)
+    .text                                    0x08003564   Section        0  timer.o(.text)
+    NVIC_SetPriority                         0x08003565   Thumb Code    32  timer.o(.text)
+    .text                                    0x08003740   Section        0  usart_rs232.o(.text)
+    .text                                    0x08003a18   Section        0  hello_world.o(.text)
+    .text                                    0x08003a34   Section       36  init.o(.text)
+    i.__0printf$bare                         0x08003a58   Section        0  printfb.o(i.__0printf$bare)
+    i.__scatterload_copy                     0x08003a68   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x08003a76   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x08003a78   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i._printf_core                           0x08003a86   Section        0  printfb.o(i._printf_core)
+    _printf_core                             0x08003a87   Thumb Code    34  printfb.o(i._printf_core)
+    .constdata                               0x08003aa8   Section     1536  iq_math.o(.constdata)
     .data                                    0x20000000   Section       20  system_stm32f10x.o(.data)
     .data                                    0x20000014   Section       20  stm32f10x_rcc.o(.data)
     APBAHBPrescTable                         0x20000014   Data          16  stm32f10x_rcc.o(.data)
@@ -527,11 +531,12 @@ Image Symbol Table
     .data                                    0x200000fa   Section        2  tim1_pwm.o(.data)
     .data                                    0x200000fc   Section       12  usart_rs232.o(.data)
     kk                                       0x20000100   Data           4  usart_rs232.o(.data)
-    .bss                                     0x20000108   Section       76  main.o(.bss)
-    .bss                                     0x20000154   Section      394  adc_int.o(.bss)
-    ADC_PhaseU_Curr                          0x2000015e   Data         128  adc_int.o(.bss)
-    ADC_PhaseV_Curr                          0x200001de   Data         128  adc_int.o(.bss)
-    ADC_BUS_Curr                             0x2000025e   Data         128  adc_int.o(.bss)
+    .data                                    0x20000108   Section        4  stdout.o(.data)
+    .bss                                     0x2000010c   Section       74  main.o(.bss)
+    .bss                                     0x20000156   Section      394  adc_int.o(.bss)
+    ADC_PhaseU_Curr                          0x20000160   Data         128  adc_int.o(.bss)
+    ADC_PhaseV_Curr                          0x200001e0   Data         128  adc_int.o(.bss)
+    ADC_BUS_Curr                             0x20000260   Data         128  adc_int.o(.bss)
     STACK                                    0x200002e0   Section     1024  startup_stm32f10x_md.o(STACK)
 
     Global Symbols
@@ -827,63 +832,67 @@ Image Symbol Table
     USART_GetITStatus                        0x08002321   Thumb Code    84  stm32f10x_usart.o(.text)
     USART_ClearITPendingBit                  0x08002375   Thumb Code    52  stm32f10x_usart.o(.text)
     fputc                                    0x080023a9   Thumb Code    32  main.o(.text)
-    main                                     0x080023c9   Thumb Code   136  main.o(.text)
-    SysTick_Handler                          0x08002459   Thumb Code     8  stm32f10x_it.o(.text)
-    TIM1_BRK_IRQHandler                      0x08002461   Thumb Code    16  stm32f10x_it.o(.text)
-    ADC1_Configuration                       0x08002479   Thumb Code   192  adc_int.o(.text)
-    DMA_Configuration                        0x08002539   Thumb Code    84  adc_int.o(.text)
-    Offset_CurrentReading                    0x0800258d   Thumb Code   132  adc_int.o(.text)
-    ADC_Sample                               0x08002611   Thumb Code    86  adc_int.o(.text)
-    Protection_software                      0x08002667   Thumb Code    42  adc_int.o(.text)
-    Delay                                    0x080026b9   Thumb Code    24  gpio_int.o(.text)
-    GPIO_LED485RE_int                        0x080026d1   Thumb Code    38  gpio_int.o(.text)
-    InitThreeHallGpio                        0x080026f7   Thumb Code    32  gpio_int.o(.text)
-    InitCAN_Gpio                             0x08002717   Thumb Code    60  gpio_int.o(.text)
-    InitUSART3_Gpio                          0x08002753   Thumb Code    60  gpio_int.o(.text)
-    InitThree_BEF_Gpio                       0x0800278f   Thumb Code    58  gpio_int.o(.text)
-    Init_Encoder_Gpio                        0x080027c9   Thumb Code    44  gpio_int.o(.text)
-    Init_PWMDAC_Gpio                         0x080027f5   Thumb Code    46  gpio_int.o(.text)
-    Init_Gpio_ADC                            0x08002823   Thumb Code    44  gpio_int.o(.text)
-    Init_Gpio_TIM1_PWM                       0x0800284f   Thumb Code    90  gpio_int.o(.text)
-    LED1_Toggle                              0x080028a9   Thumb Code    30  gpio_int.o(.text)
-    IQSin_Cos_Cale                           0x080028d9   Thumb Code   144  iq_math.o(.text)
-    IQsat                                    0x08002969   Thumb Code    22  iq_math.o(.text)
-    IQAtan_Cale                              0x0800297f   Thumb Code   282  iq_math.o(.text)
-    IQSqrt                                   0x08002a99   Thumb Code    64  iq_math.o(.text)
-    PI_Controller                            0x08002ae1   Thumb Code    70  pi_cale.o(.text)
-    PI_Pare_init                             0x08002b27   Thumb Code    50  pi_cale.o(.text)
-    knob_control                             0x08002b61   Thumb Code   274  task_function.o(.text)
-    ThreeHallPara_init                       0x08002c81   Thumb Code    26  threehall.o(.text)
-    ThreeHall_huanxkz                        0x08002c9b   Thumb Code   650  threehall.o(.text)
-    TIM1_UP_IRQHandler                       0x08002f3d   Thumb Code   298  tim1_isr_mcloop.o(.text)
-    Tim1_PWM_Init                            0x08003099   Thumb Code   328  tim1_pwm.o(.text)
-    Stop_Motor                               0x080031e1   Thumb Code    64  tim1_pwm.o(.text)
-    MOS_Q41PWM                               0x08003221   Thumb Code   104  tim1_pwm.o(.text)
-    MOS_Q16PWM                               0x08003289   Thumb Code   104  tim1_pwm.o(.text)
-    MOS_Q63PWM                               0x080032f1   Thumb Code   104  tim1_pwm.o(.text)
-    MOS_Q32PWM                               0x08003359   Thumb Code   104  tim1_pwm.o(.text)
-    MOS_Q25PWM                               0x080033c1   Thumb Code   104  tim1_pwm.o(.text)
-    MOS_Q54PWM                               0x08003429   Thumb Code   104  tim1_pwm.o(.text)
-    TIM4PWMDAC_Config                        0x08003499   Thumb Code   198  tim4_encoder_pwmdac.o(.text)
-    SysTickConfig                            0x08003589   Thumb Code    74  timer.o(.text)
-    RunSystimer                              0x080035d3   Thumb Code   226  timer.o(.text)
-    CLEAR_flag                               0x080036b5   Thumb Code   128  timer.o(.text)
-    Usart3_RS232_init                        0x08003745   Thumb Code   108  usart_rs232.o(.text)
-    Uart3_Sendlen                            0x080037b1   Thumb Code    46  usart_rs232.o(.text)
-    Uart3_RS232TX_sen                        0x080037df   Thumb Code    76  usart_rs232.o(.text)
-    ReceiveData_chuli                        0x0800382b   Thumb Code    42  usart_rs232.o(.text)
-    tran_asci                                0x08003855   Thumb Code   184  usart_rs232.o(.text)
-    tran_dec                                 0x0800390d   Thumb Code   202  usart_rs232.o(.text)
-    USART3_IRQHandler                        0x080039d7   Thumb Code    38  usart_rs232.o(.text)
-    __scatterload                            0x08003a1d   Thumb Code    28  init.o(.text)
-    __scatterload_rt2                        0x08003a1d   Thumb Code     0  init.o(.text)
-    __scatterload_copy                       0x08003a41   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x08003a4f   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x08003a51   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    IQSin_Cos_Table                          0x08003a60   Data         512  iq_math.o(.constdata)
-    IQAtan2_Table                            0x08003c60   Data        1024  iq_math.o(.constdata)
-    Region$$Table$$Base                      0x08004060   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08004080   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x080023c9   Thumb Code   132  main.o(.text)
+    SysTick_Handler                          0x08002455   Thumb Code     8  stm32f10x_it.o(.text)
+    TIM1_BRK_IRQHandler                      0x0800245d   Thumb Code    16  stm32f10x_it.o(.text)
+    ADC1_Configuration                       0x08002475   Thumb Code   192  adc_int.o(.text)
+    DMA_Configuration                        0x08002535   Thumb Code    84  adc_int.o(.text)
+    Offset_CurrentReading                    0x08002589   Thumb Code   132  adc_int.o(.text)
+    ADC_Sample                               0x0800260d   Thumb Code    86  adc_int.o(.text)
+    Protection_software                      0x08002663   Thumb Code    42  adc_int.o(.text)
+    Delay                                    0x080026b5   Thumb Code    24  gpio_int.o(.text)
+    GPIO_LED485RE_int                        0x080026cd   Thumb Code    38  gpio_int.o(.text)
+    InitThreeHallGpio                        0x080026f3   Thumb Code    32  gpio_int.o(.text)
+    InitCAN_Gpio                             0x08002713   Thumb Code    60  gpio_int.o(.text)
+    InitUSART3_Gpio                          0x0800274f   Thumb Code    60  gpio_int.o(.text)
+    InitThree_BEF_Gpio                       0x0800278b   Thumb Code    58  gpio_int.o(.text)
+    Init_Encoder_Gpio                        0x080027c5   Thumb Code    44  gpio_int.o(.text)
+    Init_Gpio_ADC                            0x080027f1   Thumb Code    44  gpio_int.o(.text)
+    Init_PWMDAC_Gpio                         0x0800281d   Thumb Code    46  gpio_int.o(.text)
+    Init_Gpio_TIM1_PWM                       0x0800284b   Thumb Code    90  gpio_int.o(.text)
+    LED1_Toggle                              0x080028a5   Thumb Code    30  gpio_int.o(.text)
+    IQSin_Cos_Cale                           0x080028d5   Thumb Code   144  iq_math.o(.text)
+    IQsat                                    0x08002965   Thumb Code    22  iq_math.o(.text)
+    IQAtan_Cale                              0x0800297b   Thumb Code   282  iq_math.o(.text)
+    IQSqrt                                   0x08002a95   Thumb Code    64  iq_math.o(.text)
+    PI_Controller                            0x08002add   Thumb Code    70  pi_cale.o(.text)
+    PI_Pare_init                             0x08002b23   Thumb Code    50  pi_cale.o(.text)
+    knob_control                             0x08002b5d   Thumb Code   274  task_function.o(.text)
+    ThreeHallPara_init                       0x08002c7d   Thumb Code    26  threehall.o(.text)
+    ThreeHall_huanxkz                        0x08002c97   Thumb Code   650  threehall.o(.text)
+    TIM1_UP_IRQHandler                       0x08002f39   Thumb Code   298  tim1_isr_mcloop.o(.text)
+    Tim1_PWM_Init                            0x08003095   Thumb Code   328  tim1_pwm.o(.text)
+    Stop_Motor                               0x080031dd   Thumb Code    64  tim1_pwm.o(.text)
+    MOS_Q41PWM                               0x0800321d   Thumb Code   104  tim1_pwm.o(.text)
+    MOS_Q16PWM                               0x08003285   Thumb Code   104  tim1_pwm.o(.text)
+    MOS_Q63PWM                               0x080032ed   Thumb Code   104  tim1_pwm.o(.text)
+    MOS_Q32PWM                               0x08003355   Thumb Code   104  tim1_pwm.o(.text)
+    MOS_Q25PWM                               0x080033bd   Thumb Code   104  tim1_pwm.o(.text)
+    MOS_Q54PWM                               0x08003425   Thumb Code   104  tim1_pwm.o(.text)
+    TIM4PWMDAC_Config                        0x08003495   Thumb Code   198  tim4_encoder_pwmdac.o(.text)
+    SysTickConfig                            0x08003585   Thumb Code    74  timer.o(.text)
+    RunSystimer                              0x080035cf   Thumb Code   226  timer.o(.text)
+    CLEAR_flag                               0x080036b1   Thumb Code   128  timer.o(.text)
+    Usart3_RS232_init                        0x08003741   Thumb Code   108  usart_rs232.o(.text)
+    Uart3_Sendlen                            0x080037ad   Thumb Code    46  usart_rs232.o(.text)
+    Uart3_RS232TX_sen                        0x080037db   Thumb Code    76  usart_rs232.o(.text)
+    ReceiveData_chuli                        0x08003827   Thumb Code    42  usart_rs232.o(.text)
+    tran_asci                                0x08003851   Thumb Code   184  usart_rs232.o(.text)
+    tran_dec                                 0x08003909   Thumb Code   202  usart_rs232.o(.text)
+    USART3_IRQHandler                        0x080039d3   Thumb Code    38  usart_rs232.o(.text)
+    hello_world                              0x08003a19   Thumb Code    10  hello_world.o(.text)
+    __scatterload                            0x08003a35   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x08003a35   Thumb Code     0  init.o(.text)
+    __0printf$bare                           0x08003a59   Thumb Code     8  printfb.o(i.__0printf$bare)
+    __1printf$bare                           0x08003a59   Thumb Code     0  printfb.o(i.__0printf$bare)
+    __2printf                                0x08003a59   Thumb Code     0  printfb.o(i.__0printf$bare)
+    __scatterload_copy                       0x08003a69   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x08003a77   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x08003a79   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    IQSin_Cos_Table                          0x08003aa8   Data         512  iq_math.o(.constdata)
+    IQAtan2_Table                            0x08003ca8   Data        1024  iq_math.o(.constdata)
+    Region$$Table$$Base                      0x080040a8   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x080040c8   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x20000000   Data           4  system_stm32f10x.o(.data)
     AHBPrescTable                            0x20000004   Data          16  system_stm32f10x.o(.data)
     t                                        0x20000028   Data           2  main.o(.data)
@@ -905,10 +914,11 @@ Image Symbol Table
     DUTY                                     0x200000fa   Data           2  tim1_pwm.o(.data)
     ch                                       0x200000fc   Data           1  usart_rs232.o(.data)
     Tag                                      0x20000104   Data           4  usart_rs232.o(.data)
-    TestPare                                 0x20000108   Data          40  main.o(.bss)
-    TaskTimePare                             0x20000130   Data          26  main.o(.bss)
-    logicContr                               0x2000014a   Data          10  main.o(.bss)
-    ADC_ConvertedValue                       0x20000154   Data          10  adc_int.o(.bss)
+    __stdout                                 0x20000108   Data           4  stdout.o(.data)
+    TestPare                                 0x2000010c   Data          40  main.o(.bss)
+    TaskTimePare                             0x20000134   Data          24  main.o(.bss)
+    logicContr                               0x2000014c   Data          10  main.o(.bss)
+    ADC_ConvertedValue                       0x20000156   Data          10  adc_int.o(.bss)
     __initial_sp                             0x200006e0   Data           0  startup_stm32f10x_md.o(STACK)
 
 
@@ -919,22 +929,22 @@ Memory Map of the image
 
   Image Entry point : 0x080000ed
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00004188, Max: 0x00010000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000041d4, Max: 0x00010000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00004080, Max: 0x00010000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x000040c8, Max: 0x00010000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x000000ec   Data   RO           83    RESET               startup_stm32f10x_md.o
-    0x080000ec   0x00000000   Code   RO          677  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x080000ec   0x00000004   Code   RO          940    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x080000f0   0x00000004   Code   RO          943    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x080000f4   0x00000000   Code   RO          945    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x080000f4   0x00000000   Code   RO          947    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x080000f4   0x00000008   Code   RO          948    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x080000fc   0x00000000   Code   RO          950    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x080000fc   0x00000000   Code   RO          952    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x080000fc   0x00000004   Code   RO          941    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x080000ec   0x00000000   Code   RO          674  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x080000ec   0x00000004   Code   RO          937    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x080000f0   0x00000004   Code   RO          940    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x080000f4   0x00000000   Code   RO          942    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x080000f4   0x00000000   Code   RO          944    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x080000f4   0x00000008   Code   RO          945    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x080000fc   0x00000000   Code   RO          947    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x080000fc   0x00000000   Code   RO          949    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x080000fc   0x00000004   Code   RO          938    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x08000100   0x000001e0   Code   RO           17    .text               system_stm32f10x.o
     0x080002e0   0x00000024   Code   RO           84    .text               startup_stm32f10x_md.o
     0x08000304   0x000000dc   Code   RO           88    .text               misc.o
@@ -946,26 +956,28 @@ Memory Map of the image
     0x08001184   0x00000e1a   Code   RO          383    .text               stm32f10x_tim.o
     0x08001f9e   0x00000002   PAD
     0x08001fa0   0x00000408   Code   RO          395    .text               stm32f10x_usart.o
-    0x080023a8   0x000000b0   Code   RO          419    .text               main.o
-    0x08002458   0x00000020   Code   RO          478    .text               stm32f10x_it.o
-    0x08002478   0x00000240   Code   RO          494    .text               adc_int.o
-    0x080026b8   0x00000220   Code   RO          511    .text               gpio_int.o
-    0x080028d8   0x00000208   Code   RO          523    .text               iq_math.o
-    0x08002ae0   0x00000080   Code   RO          538    .text               pi_cale.o
-    0x08002b60   0x00000120   Code   RO          551    .text               task_function.o
-    0x08002c80   0x000002bc   Code   RO          564    .text               threehall.o
-    0x08002f3c   0x0000015c   Code   RO          580    .text               tim1_isr_mcloop.o
-    0x08003098   0x00000400   Code   RO          599    .text               tim1_pwm.o
-    0x08003498   0x000000d0   Code   RO          614    .text               tim4_encoder_pwmdac.o
-    0x08003568   0x000001dc   Code   RO          626    .text               timer.o
-    0x08003744   0x000002d8   Code   RO          646    .text               usart_rs232.o
-    0x08003a1c   0x00000024   Code   RO          970    .text               mc_w.l(init.o)
-    0x08003a40   0x0000000e   Code   RO          982    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08003a4e   0x00000002   Code   RO          983    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08003a50   0x0000000e   Code   RO          984    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x08003a5e   0x00000002   PAD
-    0x08003a60   0x00000600   Data   RO          524    .constdata          iq_math.o
-    0x08004060   0x00000020   Data   RO          980    Region$$Table       anon$$obj.o
+    0x080023a8   0x000000ac   Code   RO          419    .text               main.o
+    0x08002454   0x00000020   Code   RO          478    .text               stm32f10x_it.o
+    0x08002474   0x00000240   Code   RO          494    .text               adc_int.o
+    0x080026b4   0x00000220   Code   RO          511    .text               gpio_int.o
+    0x080028d4   0x00000208   Code   RO          523    .text               iq_math.o
+    0x08002adc   0x00000080   Code   RO          538    .text               pi_cale.o
+    0x08002b5c   0x00000120   Code   RO          551    .text               task_function.o
+    0x08002c7c   0x000002bc   Code   RO          564    .text               threehall.o
+    0x08002f38   0x0000015c   Code   RO          580    .text               tim1_isr_mcloop.o
+    0x08003094   0x00000400   Code   RO          599    .text               tim1_pwm.o
+    0x08003494   0x000000d0   Code   RO          614    .text               tim4_encoder_pwmdac.o
+    0x08003564   0x000001dc   Code   RO          626    .text               timer.o
+    0x08003740   0x000002d8   Code   RO          643    .text               usart_rs232.o
+    0x08003a18   0x0000001c   Code   RO          665    .text               hello_world.o
+    0x08003a34   0x00000024   Code   RO          967    .text               mc_w.l(init.o)
+    0x08003a58   0x00000010   Code   RO          678    i.__0printf$bare    mc_w.l(printfb.o)
+    0x08003a68   0x0000000e   Code   RO          979    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08003a76   0x00000002   Code   RO          980    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08003a78   0x0000000e   Code   RO          981    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08003a86   0x00000022   Code   RO          685    i._printf_core      mc_w.l(printfb.o)
+    0x08003aa8   0x00000600   Data   RO          524    .constdata          iq_math.o
+    0x080040a8   0x00000020   Data   RO          977    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x000006e0, Max: 0x00005000, ABSOLUTE)
@@ -981,10 +993,10 @@ Memory Map of the image
     0x200000f2   0x00000004   Data   RW          565    .data               threehall.o
     0x200000f6   0x00000004   Data   RW          581    .data               tim1_isr_mcloop.o
     0x200000fa   0x00000002   Data   RW          600    .data               tim1_pwm.o
-    0x200000fc   0x0000000c   Data   RW          647    .data               usart_rs232.o
-    0x20000108   0x0000004c   Zero   RW          420    .bss                main.o
-    0x20000154   0x0000018a   Zero   RW          495    .bss                adc_int.o
-    0x200002de   0x00000002   PAD
+    0x200000fc   0x0000000c   Data   RW          644    .data               usart_rs232.o
+    0x20000108   0x00000004   Data   RW          951    .data               mc_w.l(stdout.o)
+    0x2000010c   0x0000004a   Zero   RW          420    .bss                main.o
+    0x20000156   0x0000018a   Zero   RW          495    .bss                adc_int.o
     0x200002e0   0x00000400   Zero   RW           81    STACK               startup_stm32f10x_md.o
 
 
@@ -997,9 +1009,10 @@ Image component sizes
 
        576         40          0          3        394       2457   adc_int.o
          0          0          0          0          0       4540   core_cm3.o
-       544         18          0          0          0       2308   gpio_int.o
+       544         18          0          0          0       2300   gpio_int.o
+        28         18          0          0          0        450   hello_world.o
        520          8       1536          0          0       2138   iq_math.o
-       176          8          0        197         76       7920   main.o
+       172          8          0        197         74       7948   main.o
        220         22          0          0          0     214125   misc.o
        128          8          0          0          0        705   pi_cale.o
         36          8        236          0       1024        816   startup_stm32f10x_md.o
@@ -1016,13 +1029,13 @@ Image component sizes
        348         50          0          4          0        895   tim1_isr_mcloop.o
       1024          8          0          2          0       2100   tim1_pwm.o
        208         10          0          0          0        676   tim4_encoder_pwmdac.o
-       476         16          0          0          0      16286   timer.o
+       476         16          0          0          0      16282   timer.o
        728         58          0         12          0       3097   usart_rs232.o
 
     ----------------------------------------------------------------------
-     14620        572       1804        264       1496     376718   Object Totals
+     14644        590       1804        264       1492     377184   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-         4          0          0          2          2          0   (incl. Padding)
+         4          0          0          2          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1038,19 +1051,21 @@ Image component sizes
          8          4          0          0          0          0   entry9a.o
         30          0          0          0          0          0   handlers.o
         36          8          0          0          0         68   init.o
+        50          8          0          0          0        152   printfb.o
+         0          0          0          4          0          0   stdout.o
 
     ----------------------------------------------------------------------
-        88         16          0          0          0         68   Library Totals
-         2          0          0          0          0          0   (incl. Padding)
+       136         24          0          4          0        220   Library Totals
+         0          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
 
-        86         16          0          0          0         68   mc_w.l
+       136         24          0          4          0        220   mc_w.l
 
     ----------------------------------------------------------------------
-        88         16          0          0          0         68   Library Totals
+       136         24          0          4          0        220   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -1059,15 +1074,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     14708        588       1804        264       1496     374858   Grand Totals
-     14708        588       1804        264       1496     374858   ELF Image Totals
-     14708        588       1804        264          0          0   ROM Totals
+     14780        614       1804        268       1492     375320   Grand Totals
+     14780        614       1804        268       1492     375320   ELF Image Totals
+     14780        614       1804        268          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                16512 (  16.13kB)
+    Total RO  Size (Code + RO Data)                16584 (  16.20kB)
     Total RW  Size (RW Data + ZI Data)              1760 (   1.72kB)
-    Total ROM Size (Code + RO Data + RW Data)      16776 (  16.38kB)
+    Total ROM Size (Code + RO Data + RW Data)      16852 (  16.46kB)
 
 ==============================================================================
 

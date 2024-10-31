@@ -50,6 +50,12 @@
 //  logicContr.Run_mode=1 -> DUTY = 2*pi_spd.Ref  = 2* rotation button
 //  logicContr.Run_mode=2 -> I_kp = (rotation button-Bus_Curr)   V_kp=  (rotation button-Hall_Three.Speed_RPMF[Feedback velocity from hall sensor]) 
 
+
+/* GPIOA,GPIOB, Configuration: PWM
+    GPIOA 8    9      10     PMWUH
+    GPIOB 13  14    15  PMWUL
+*/
+
 //############################################################
 
 
@@ -88,14 +94,6 @@ u16 spdcmd;
 extern  uint16_t  DUTY;
 u8 Res;
 
-int fputc( int ch , FILE *f)  // print function for RS232
-{
-    USART_SendData( USART3 , (u8)ch ) ;
-    while(USART_GetFlagStatus(USART3 , USART_FLAG_TC) == RESET)
-    {
-    }
-    return ch;
-}
 
 int main(void) {
     // 2ms  control  knob control
@@ -104,18 +102,15 @@ int main(void) {
     logicContr.Control_Mode = 1;  //   1 -> DUTY = 2*pi_spd.Ref    2 ->   close
                                   //   loop    I & rotational speed
     logicContr.Run_mode = 1;      //     1 ->  CCW     2 -> CW
-    GPIO_LED485RE_int();          // RS485 和运行LED
+    GPIO_LED485RE_int();          // Blink LED initial
     Init_Gpio_ADC();              // ADC的引脚初始化      83us
     InitUSART3_Gpio();            // 串口3IO初始化
-    // InitCAN_Gpio();               // CAN通讯的IO初始化
-    // CAN_Config();                 // CAN通讯的初始化
     Init_Gpio_TIM1_PWM();         // 高级定时器1的6个IO初始化   // pwm
                                   // 12K       83.333us
     InitThreeHallGpio();          // 霍尔的IO初始化
     Init_PWMDAC_Gpio();           // PWM4的IO作为DAC初始化
     ThreeHallPara_init();         // 三霍尔角度传感器的参数初始化
     Usart3_RS232_init();          // 串口3初始化
-    // CAN_Config();                 // CAN通讯的初始化
     DMA_Configuration();          // ADC连接DMA读取数据初始化
     Delay(10000);
     ADC1_Configuration();  // ADC模式初始化      1us
@@ -133,14 +128,12 @@ int main(void) {
 
     while (1) {
         //hello_world();
-        RunSystimer();        // 时间任务标志初始化  call 10ms
-        // CAN_Sendlen();        // CAN定时发送电机参数     // useless
-        Uart3_RS232TX_sen();  // 串口3通讯的定时发送		  // send print
-                              // command
-        ReceiveData_chuli();  // 串口中断接收数据处理
-        // CAN_Receivechuli();   // CAN通讯中断接收数据处理	 // useless
+        RunSystimer();        // 时间任务标志初始化  call 10ms       
+        // Uart3_RS232TX_sen();  // 串口3通讯的定时发送		  // send print                              // command
+        // ReceiveData_chuli();  // 串口中断接收数据处理      
         CLEAR_flag();         // 清除时间任务标志   clear flag
                               // printf("%d \r\n",Hall_Three.Speed_RPMF);
+
        
 
 }

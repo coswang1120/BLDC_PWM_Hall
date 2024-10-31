@@ -12,8 +12,8 @@
 //电机控制QQ群：314306105
 //############################################################
    
-#ifndef _IQ_math_H
-#define _IQ_math_H 
+#ifndef __IQ_math_H
+#define __IQ_math_H 
 
 #include "stm32f10x.h"
 
