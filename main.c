@@ -53,8 +53,6 @@
 //############################################################
 
 
-
-
 #include "stm32f10x.h"
 #include "GPIO_int.h"
 #include "Timer.h"
@@ -69,6 +67,7 @@
 // #include "CAN.h"
 #include <stdio.h>
 #include <math.h>
+#include "main.h"
 
 u16 t;
 u16 len;
@@ -88,8 +87,7 @@ u16 spdcmd;
 extern  uint16_t  DUTY;
 u8 Res;
 
-int fputc( int ch , FILE *f);
- 
+
 
 int fputc( int ch , FILE *f)  // print function for RS232
 {
