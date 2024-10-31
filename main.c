@@ -54,6 +54,7 @@
 
 q1
 q2
+q3
 
              
 #include "stm32f10x.h"
