@@ -51,9 +51,6 @@
 //  logicContr.Run_mode=2 -> I_kp = (rotation button-Bus_Curr)   V_kp=  (rotation button-Hall_Three.Speed_RPMF[Feedback velocity from hall sensor]) 
 
 //############################################################
-test1
-test2
-test3
 
 #include "stm32f10x.h"
 #include "GPIO_int.h"
